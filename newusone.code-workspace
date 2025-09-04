@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "newusone",
+			"path": "."
+		},
+		{
+			"name": "src",
+			"path": "../newus/new/src"
+		}
+	],
+	"settings": {}
+}
