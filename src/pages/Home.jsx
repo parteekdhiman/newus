@@ -5,6 +5,9 @@ import Into from "../components/Into";
 import StatisticsSection from "../components/StatisticsSection";
 import SliderPartners from "../components/Sliderparteners";
 import BusinessPartners from "../components/BusinessPartners";
+import Assistance from "../components/Assistance";
+import Package from "../components/Package";
+import Review from "../components/Review";
 
 function Home() {
   return (
@@ -17,6 +20,9 @@ function Home() {
       <StatisticsSection />
       <ProfessionalServices />
       <BusinessPartners />
+      <Assistance/>
+      <Package/>
+      <Review/>
     </>
   );
 }
