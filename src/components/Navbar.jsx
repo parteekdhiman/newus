@@ -4,15 +4,10 @@ import { slugify } from "../utils/slugify";
 import { Link } from "react-router-dom";
 export default function ModernNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const toggleMobileDropdown = () => {
-    setMobileDropdownOpen(!mobileDropdownOpen);
   };
 
 
@@ -118,7 +113,7 @@ export default function ModernNavbar() {
             <div className="flex-shrink-0 flex items-center">
               <div className="text-2xl font-bold text-indigo-600">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  ModernNav
+                  newus
                 </span>
               </div>
             </div>
@@ -126,23 +121,23 @@ export default function ModernNavbar() {
             {/* Desktop Menu */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Home
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/about"
                   className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   About
-                </a>
+                </Link>
 
                 {/* Desktop Dropdown */}
                 <div className="relative dropdown-container">
                   <button className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center dropdown-trigger">
-                    Services
+                    Programs
                     <svg
                       className="ml-1 h-4 w-4 transition-transform duration-200 dropdown-arrow"
                       fill="none"
@@ -353,20 +348,23 @@ export default function ModernNavbar() {
                 </div>
 
                 {/* <a href="#" className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Portfolio</a> */}
-                <a
-                  href="#"
+                <Link
+                  to="/contact"
                   className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* CTA Button (Desktop) */}
             <div className="hidden md:block">
-              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg">
+              <Link
+                to="/courses"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
                 Get Started
-              </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -389,92 +387,41 @@ export default function ModernNavbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`mobile-menu md:hidden ${
+          className={`mobile-menu md:hidden absolute z-80 w-full ${
             mobileMenuOpen ? "block" : "hidden"
           }`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-            <a
-              href="#"
+            <Link
+              onClick={toggleMobileMenu}
+              to="/"
               className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              onClick={toggleMobileMenu}
+              href="/about"
               className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200"
             >
               About
-            </a>
+            </Link>
 
             {/* Mobile Dropdown */}
-            <div className="mobile-dropdown">
-              <button
-                onClick={() => setIsDropdownOpen((prev) => !prev)}
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center dropdown-trigger"
-              >
-                Services
-                <svg
-                  className={`ml-1 h-4 w-4 transition-transform duration-200 dropdown-arrow ${
-                    isDropdownOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              <div
-                className={`mobile-dropdown-menu pl-6 space-y-1 ${
-                  mobileDropdownOpen ? "block" : "hidden"
-                }`}
-              >
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-sm transition-colors duration-200"
-                >
-                  Web Development
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-sm transition-colors duration-200"
-                >
-                  Mobile Apps
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-sm transition-colors duration-200"
-                >
-                  UI/UX Design
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-sm transition-colors duration-200"
-                >
-                  Consulting
-                </a>
-              </div>
-            </div>
-
-            <a
-              href="#"
+            <Link
+              onClick={toggleMobileMenu}
+              to="/courses"
               className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200"
             >
-              Portfolio
-            </a>
-            <a
-              href="#"
+              Programs
+            </Link>
+            <Link
+              onClick={toggleMobileMenu}
+              to="/contact"
               className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200"
             >
               Contact
-            </a>
+            </Link>
 
             {/* Mobile CTA */}
             <div className="pt-4 pb-2">

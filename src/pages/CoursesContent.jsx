@@ -70,8 +70,8 @@ function CoursesContent() {
       if (result?.brochureUrl) {
         const a = document.createElement("a");
         a.href = result.brochureUrl;
-        a.setAttribute("download", "Brochure.pdf");
-        a.setAttribute("target", "_self");
+        a.setAttribute("download", course?.name + ".pdf");
+        a.setAttribute("target", "_blank");
         document.body.appendChild(a);
         a.click();
         a.remove();

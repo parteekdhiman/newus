@@ -10,16 +10,21 @@ import { coursesList } from "../data/courseslist";
 function SliderCards() {
   return (
     <div className="w-full py-12 bg-gradient-to-b from-white to-purple-50">
-      <h2 className="text-3xl font-bold text-center mb-10">Latest Articles</h2>
-
+      <div className="text-center mb-16 flex justify-center">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 lg:w-1/2">
+          Specialized  <span className="gradient-text"> Program</span> for Career
+        </h2>
+      </div>
       <div className="relative max-w-7xl mx-auto px-6">
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            480: { slidesPerView: 1 },    
+            640: { slidesPerView: 1.2 }, 
+            768: { slidesPerView: 1.8 },  
+            1024: { slidesPerView: 2.5 },
+            1280: { slidesPerView: 3 },   
           }}
           autoplay={{
             delay: 3000,
@@ -52,13 +57,13 @@ function SliderCards() {
                 {/* Content */}
                 <div className="p-3">
                   <div className="w-full flex gap-3 pb-2">
-                        <span className="bg-gradient-to-r from-emerald-500 to-teal-600 group-hover:from-emerald-600 to-teal-800 rounded-full px-3 py-1 text-white text-xs">
-                          {item.duration}
-                        </span>
-                        { item.placement && <span className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full px-3 py-1 text-white text-xs">
-                          100% Job Assistance
-                        </span>}
-                      </div>
+                    <span className="bg-gradient-to-r from-emerald-500 to-teal-600 group-hover:from-emerald-600 to-teal-800 rounded-full px-3 py-1 text-white text-xs">
+                      {item.duration}
+                    </span>
+                    {item.placement && <span className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full px-3 py-1 text-white text-xs">
+                      100% Job Assistance
+                    </span>}
+                  </div>
                   <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
                   <p className="text-gray-600 text-sm mb-4">
                     {item.description.substring(0, 120)}... read more

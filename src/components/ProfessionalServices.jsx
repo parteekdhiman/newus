@@ -61,7 +61,7 @@ export default function ProfessionalServices() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                International Certificate
+                International Certificates
               </h3>
             </div>
           </div>
