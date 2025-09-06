@@ -49,9 +49,9 @@ const HeroSlider = () => {
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                  Full Stack with
+                  Full Stack with <br></br>
                   <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                    Data Science
+                     Data Science
                   </span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
@@ -122,7 +122,7 @@ const HeroSlider = () => {
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                  Full Stack 
+                  Full Stack <br/>
                   <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
                     Development
                   </span>
@@ -195,7 +195,7 @@ const HeroSlider = () => {
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                  Data Science
+                  Data Science <br/>
                   <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Tech Stack
                   </span>
@@ -268,7 +268,7 @@ const HeroSlider = () => {
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                  Graphics &
+                  Graphics & <br></br>
                   <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
                     Animation
                   </span>

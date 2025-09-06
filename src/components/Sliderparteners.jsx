@@ -52,22 +52,22 @@ function SliderCards() {
                 {/* Content */}
                 <div className="p-3">
                   <div className="w-full flex gap-3 pb-2">
-                        <span className="bg-purple-600 rounded-full px-3 py-1 text-white text-xs">
+                        <span className="bg-gradient-to-r from-emerald-500 to-teal-600 group-hover:from-emerald-600 to-teal-800 rounded-full px-3 py-1 text-white text-xs">
                           {item.duration}
                         </span>
-                        { item.placement && <span className="bg-purple-600 rounded-full px-3 py-1 text-white text-xs">
+                        { item.placement && <span className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full px-3 py-1 text-white text-xs">
                           100% Job Assistance
                         </span>}
                       </div>
                   <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    {item.description.substring(0, 120)}...
+                    {item.description.substring(0, 120)}... read more
                   </p>
 
                   {/* Author & Button */}
                   <div className="flex items-center justify-between">
                     <button className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-full hover:opacity-90 transition">
-                      Read More
+                      View course
                     </button>
                   </div>
                 </div>

@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import { slugify } from "../utils/slugify";
 const Courses = () => {
   const courseCardsRef = useRef([]);
+  
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -95,7 +96,7 @@ const Courses = () => {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">{name}</h3>
                         <p className="text-gray-600 text-sm mb-4">
-                          {description.substring(0, 100)}...
+                          {description.substring(0, 100)} .....
                         </p>
 
                         {/* Author & Button */}
@@ -160,8 +161,7 @@ const Courses = () => {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">{name}</h3>
                         <p className="text-gray-600 text-sm mb-4">
-                          {description.substring(0, 100)} ...
-                        </p>
+                          {description.substring(0, 100)} .....                       </p>
 
                         {/* Author & Button */}
                         <div className="flex items-center justify-between">
@@ -225,8 +225,7 @@ const Courses = () => {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">{name}</h3>
                         <p className="text-gray-600 text-sm mb-4">
-                          {description.substring(0, 100)} ...
-                        </p>
+                          {description.substring(0, 100)} .....                       </p>
 
                         {/* Author & Button */}
                         <div className="flex items-center justify-between">
