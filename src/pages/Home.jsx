@@ -15,8 +15,10 @@ function Home() {
   return (
     <>
       <Suspense fallback={<h2>Loading.....</h2>}>
+        <h1 className="sr-only">Newus Dharamshala IT Courses, Training & Career Programs</h1>
         <HeroSlider />
         <section className="py-20 bg-white container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Build Your Career with Industry-Focused IT Programs</h2>
           <Into />
         </section>
         <SliderPartners />
