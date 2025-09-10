@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { coursesList } from "../data/courseslist";
+import { CoursesList } from "../data/courseslist";
 import { slugify } from "../utils/slugify";
 import { Link } from "react-router-dom";
 export default function ModernNavbar() {
@@ -179,7 +179,7 @@ export default function ModernNavbar() {
                             Programming
                           </h3>
                           <div className="space-y-2">
-                            {coursesList
+                            {CoursesList
                               .filter(
                                 (fill) =>
                                   fill.navbar === true &&
@@ -220,7 +220,7 @@ export default function ModernNavbar() {
                             Design
                           </h3>
                           <div className="space-y-2">
-                            {coursesList
+                            {CoursesList
                               .filter(
                                 (fill) =>
                                   fill.navbar === true && fill.type === "Design"
@@ -259,7 +259,7 @@ export default function ModernNavbar() {
                             Business
                           </h3>
                           <div className="space-y-2">
-                            {coursesList
+                            {CoursesList
                               .filter(
                                 (fill) =>
                                   fill.navbar === true &&
@@ -299,7 +299,7 @@ export default function ModernNavbar() {
                             Short Term
                           </h3>
                           <div className="space-y-2">
-                            {coursesList
+                            {CoursesList
                               .filter(
                                 (fill) =>
                                   fill.navbar === true &&

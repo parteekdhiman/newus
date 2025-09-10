@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Into from "../components/Into";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 function About() {
   useEffect(() => {
     document.querySelectorAll("button").forEach((button) => {
@@ -72,7 +73,7 @@ function About() {
             </div>
             <div className="flex justify-center lg:justify-end">
                
-                <img src="https://newus.in/images/other/about_1.jpg" alt="about" className=" w-full max-w-lg h-96 rounded-3xl shadow-2xl"/>
+                <LazyLoadImage effect="blur" src="https://newus.in/images/other/about_1.jpg" alt="about" className=" w-full max-w-lg h-96 rounded-3xl shadow-2xl"/>
             </div>
           </div>
         </div>
@@ -127,7 +128,7 @@ function About() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div className="order-2 lg:order-1">
-              <img className="image-placeholder w-full h-96 rounded-3xl shadow-xl" src="https://newus.in/images/team/CEO.jpeg" alt="ceo"/>
+              <LazyLoadImage effect="blur" className=" w-full h-110 rounded-3xl shadow-xl" src="https://newus.in/images/other/about_2.jpg" alt="ceo"/>
             </div>
 
             <div className="order-1 lg:order-2">

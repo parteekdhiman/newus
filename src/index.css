@@ -1,4 +1,61 @@
 @import "tailwindcss";
+.html {
+  color: #f75421;
+}
+.css {
+  color: #006cb4;
+}
+.javascript {
+  color: #f7d800;
+}
+.jQuery {
+  color: #2962ff;
+}
+.react {
+  color: #5ed3f4;
+}
+.Angular {
+  color: #d61a15;
+}
+.php {
+  color: #7377ad;
+}
+.nodejs {
+  color: #7fc728;
+}
+.mysql {
+  color: #5e7580;
+}
+.mongodb {
+  color: #4da53f;
+}
+.wordpress {
+  color: #007298;
+}
+.laravel {
+  color: #f72c1f;
+}
+.django {
+  color: #092d1e;
+}
+.paint {
+  color: rgb(78, 125, 156);
+}
+.vfx {
+  color: rgb(0, 255, 255);
+}
+.texturing {
+  color: rgb(255, 153, 0);
+}
+.audio-mixing {
+  color: rgb(0, 255, 170);
+}
+.graphic-dig {
+  color: rgb(0, 255, 0);
+}
+.graphic-off {
+  color: rgb(0, 47, 255);
+}
 .dropdown-enter {
   opacity: 0;
   transform: translateY(-10px);
@@ -68,3 +125,140 @@
 .hero-gradient {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
+@keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        .floating-animation {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-animation:nth-child(2) { animation-delay: 2s; }
+        .floating-animation:nth-child(3) { animation-delay: 4s; }
+        .floating-animation:nth-child(4) { animation-delay: 1s; }
+        
+        .tech-icon {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Enhanced responsive breakpoints */
+        @media (max-width: 375px) {
+          .hero-title {
+            font-size: 2rem !important;
+            line-height: 1.1 !important;
+          }
+          .hero-subtitle {
+            font-size: 0.875rem !important;
+          }
+          .tech-stack-container {
+            gap: 0.375rem !important;
+          }
+          .tech-icon {
+            padding: 0.25rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 2.25rem !important;
+          }
+          .hero-description {
+            font-size: 0.95rem !important;
+          }
+          .cta-buttons {
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+          .cta-button {
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        @media (min-width: 481px) and (max-width: 640px) {
+          .hero-title {
+            font-size: 2.5rem !important;
+          }
+          .hero-description {
+            font-size: 1rem !important;
+          }
+        }
+
+        @media (min-width: 641px) and (max-width: 768px) {
+          .hero-title {
+            font-size: 3rem !important;
+          }
+          .hero-description {
+            font-size: 1.1rem !important;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .hero-title {
+            font-size: 3.5rem !important;
+          }
+          .visual-card {
+            width: 20rem !important;
+            height: 20rem !important;
+          }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1280px) {
+          .hero-title {
+            font-size: 4rem !important;
+          }
+          .visual-card {
+            width: 22rem !important;
+            height: 22rem !important;
+          }
+        }
+
+        @media (min-width: 1281px) {
+          .hero-title {
+            font-size: 4.5rem !important;
+          }
+          .visual-card {
+            width: 24rem !important;
+            height: 24rem !important;
+          }
+        }
+
+        /* Touch-friendly navigation */
+        @media (pointer: coarse) {
+          .nav-arrow {
+            padding: 1rem !important;
+            min-width: 3rem;
+            min-height: 3rem;
+          }
+          .slide-dot {
+            min-width: 2.5rem !important;
+            min-height: 2.5rem !important;
+            padding: 0.5rem;
+          }
+        }
+
+        /* Landscape phone optimizations */
+        @media (max-height: 500px) and (orientation: landscape) {
+          .container-padding {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+          }
+          .hero-title {
+            margin-bottom: 1rem !important;
+          }
+          .hero-description {
+            margin-bottom: 1.5rem !important;
+          }
+          .tech-stack-container {
+            margin-bottom: 1.5rem !important;
+          }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .tech-icon {
+            border-width: 0.5px;
+          }
+        }

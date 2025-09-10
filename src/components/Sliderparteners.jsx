@@ -4,8 +4,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import { coursesList } from "../data/courseslist";
-
+import { CoursesList } from "../data/courseslist";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function SliderCards() {
   return (
@@ -39,12 +40,13 @@ function SliderCards() {
           modules={[Pagination, Autoplay, Navigation]}
           className="pb-12"
         >
-          {coursesList.filter((fill) => fill.slider === true).map((item) => (
+          {CoursesList.filter((fill) => fill.slider === true).map((item) => (
             <SwiperSlide key={item.id}>
               <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Image */}
                 <div className="relative">
-                  <img
+                  <LazyLoadImage
+                  effect="blur"
                     src={item.image}
                     alt={item.name}
                     className="w-full h-48 object-cover"

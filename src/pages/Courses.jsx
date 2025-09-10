@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { coursesList } from "../data/courseslist";
+import { CoursesList } from "../data/courseslist";
 import { Link, Navigate } from "react-router-dom";
 import { slugify } from "../utils/slugify";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const Courses = () => {
   const courseCardsRef = useRef([]);
   
@@ -54,9 +55,9 @@ const Courses = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {Array.isArray(coursesList) &&
-              coursesList.length > 0 &&
-              coursesList
+            {Array.isArray(CoursesList) &&
+              CoursesList.length > 0 &&
+              CoursesList
                 .filter((fill) => fill.coursetype === "Flagship")
                 .map((course) => {
                   const {
@@ -72,7 +73,8 @@ const Courses = () => {
                     <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" key={id}>
                       {/* Image */}
                       <div className="relative">
-                        <img
+                        <LazyLoadImage
+                        effect="blur"
                           src={image}
                           alt={name}
                           className="w-full h-48 object-cover"
@@ -119,9 +121,9 @@ const Courses = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {Array.isArray(coursesList) &&
-              coursesList.length > 0 &&
-              coursesList
+            {Array.isArray(CoursesList) &&
+              CoursesList.length > 0 &&
+              CoursesList
                 .filter((fill) => fill.coursetype === "Assistance")
                 .map((course) => {
                   const {
@@ -137,7 +139,8 @@ const Courses = () => {
                     <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" key={id}>
                       {/* Image */}
                       <div className="relative">
-                        <img
+                        <LazyLoadImage
+                        effect="blur"
                           src={image}
                           alt={name}
                           className="w-full h-48 object-cover"
@@ -183,9 +186,9 @@ const Courses = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {Array.isArray(coursesList) &&
-              coursesList.length > 0 &&
-              coursesList
+            {Array.isArray(CoursesList) &&
+              CoursesList.length > 0 &&
+              CoursesList
                 .filter((fill) => fill.coursetype === "Short")
                 .map((course) => {
                   const {
@@ -201,7 +204,8 @@ const Courses = () => {
                     <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" key={id}>
                       {/* Image */}
                       <div className="relative">
-                        <img
+                        <LazyLoadImage
+                        effect="blur"
                           src={image}
                           alt={name}
                           className="w-full h-48 object-cover"

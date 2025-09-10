@@ -1,28 +1,32 @@
 import React from "react";
-import HeroSlider from "../components/HeroSlider";
-import ProfessionalServices from "../components/ProfessionalServices";
-import Into from "../components/Into";
-import StatisticsSection from "../components/StatisticsSection";
-import SliderPartners from "../components/Sliderparteners";
-import BusinessPartners from "../components/BusinessPartners";
-import Assistance from "../components/Assistance";
-import Package from "../components/Package";
-import Review from "../components/Review";
-
+import { Suspense, lazy } from "react";
+const HeroSlider = lazy(() => import("../components/HeroSlider"));
+const ProfessionalServices = lazy(() =>
+  import("../components/ProfessionalServices")
+);
+const Into = lazy(() => import("../components/Into"));
+const StatisticsSection = lazy(() => import("../components/StatisticsSection"));
+const SliderPartners = lazy(() => import("../components/Sliderparteners"));
+const BusinessPartners = lazy(() => import("../components/BusinessPartners"));
+const Assistance = lazy(() => import("../components/Assistance"));
+const Package = lazy(() => import("../components/Package"));
+const Review = lazy(() => import("../components/Review"));
 function Home() {
   return (
     <>
-      <HeroSlider />
-      <section className="py-20 bg-white container mx-auto px-6">
-        <Into />
-      </section>
-      <SliderPartners />
-      <StatisticsSection />
-      <ProfessionalServices />
-      <BusinessPartners />
-      <Assistance/>
-      <Package/>
-      <Review/>
+      <Suspense fallback={<h2>Loading.....</h2>}>
+        <HeroSlider />
+        <section className="py-20 bg-white container mx-auto px-6">
+          <Into />
+        </section>
+        <SliderPartners />
+        <StatisticsSection />
+        <ProfessionalServices />
+        <BusinessPartners />
+        <Assistance />
+        <Package />
+        <Review />
+      </Suspense>
     </>
   );
 }

@@ -33,7 +33,17 @@ const partner = [
         name:"upgrad",
         link:"https://www.upgrad.com/",
         img:"https://newus.in/images/Partners/upgrad.png"
-    }] 
+    },
+     {
+        name:"KC Overseas",
+        link:"https://www.studies-overseas.com/",
+        img:"https://newus.in/images/Partners/kc.png"
+    }, {
+        name:"geebeeworld",
+        link:"https://www.geebeeworld.com/",
+        img:"https://newus.in/images/Partners/geebee.png"
+    }
+] 
 
 
     export default partner;

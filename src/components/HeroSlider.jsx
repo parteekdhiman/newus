@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,17 +8,17 @@ const HeroSlider = () => {
   // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % totalSlides);
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
     }, 5000);
     return () => clearInterval(interval);
   }, [totalSlides]);
 
   const nextSlide = () => {
-    setCurrentSlide(prev => (prev + 1) % totalSlides);
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
   const prevSlide = () => {
-    setCurrentSlide(prev => (prev - 1 + totalSlides) % totalSlides);
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   const goToSlide = (index) => {
@@ -27,146 +27,6 @@ const HeroSlider = () => {
 
   return (
     <>
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        .floating-animation {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        .floating-animation:nth-child(2) { animation-delay: 2s; }
-        .floating-animation:nth-child(3) { animation-delay: 4s; }
-        .floating-animation:nth-child(4) { animation-delay: 1s; }
-        
-        .tech-icon {
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Enhanced responsive breakpoints */
-        @media (max-width: 375px) {
-          .hero-title {
-            font-size: 2rem !important;
-            line-height: 1.1 !important;
-          }
-          .hero-subtitle {
-            font-size: 0.875rem !important;
-          }
-          .tech-stack-container {
-            gap: 0.375rem !important;
-          }
-          .tech-icon {
-            padding: 0.25rem !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .hero-title {
-            font-size: 2.25rem !important;
-          }
-          .hero-description {
-            font-size: 0.95rem !important;
-          }
-          .cta-buttons {
-            flex-direction: column;
-            gap: 0.75rem;
-          }
-          .cta-button {
-            width: 100%;
-            text-align: center;
-          }
-        }
-
-        @media (min-width: 481px) and (max-width: 640px) {
-          .hero-title {
-            font-size: 2.5rem !important;
-          }
-          .hero-description {
-            font-size: 1rem !important;
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 768px) {
-          .hero-title {
-            font-size: 3rem !important;
-          }
-          .hero-description {
-            font-size: 1.1rem !important;
-          }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .hero-title {
-            font-size: 3.5rem !important;
-          }
-          .visual-card {
-            width: 20rem !important;
-            height: 20rem !important;
-          }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1280px) {
-          .hero-title {
-            font-size: 4rem !important;
-          }
-          .visual-card {
-            width: 22rem !important;
-            height: 22rem !important;
-          }
-        }
-
-        @media (min-width: 1281px) {
-          .hero-title {
-            font-size: 4.5rem !important;
-          }
-          .visual-card {
-            width: 24rem !important;
-            height: 24rem !important;
-          }
-        }
-
-        /* Touch-friendly navigation */
-        @media (pointer: coarse) {
-          .nav-arrow {
-            padding: 1rem !important;
-            min-width: 3rem;
-            min-height: 3rem;
-          }
-          .slide-dot {
-            min-width: 2.5rem !important;
-            min-height: 2.5rem !important;
-            padding: 0.5rem;
-          }
-        }
-
-        /* Landscape phone optimizations */
-        @media (max-height: 500px) and (orientation: landscape) {
-          .container-padding {
-            padding-top: 2rem !important;
-            padding-bottom: 2rem !important;
-          }
-          .hero-title {
-            margin-bottom: 1rem !important;
-          }
-          .hero-description {
-            margin-bottom: 1.5rem !important;
-          }
-          .tech-stack-container {
-            margin-bottom: 1.5rem !important;
-          }
-        }
-
-        /* High DPI displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-          .tech-icon {
-            border-width: 0.5px;
-          }
-        }
-      `}</style>
-
       <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
         {/* Animated background elements */}
         <div className="absolute inset-0">
@@ -179,7 +39,13 @@ const HeroSlider = () => {
         {/* Slider Container */}
         <div className="slider-container relative z-10 min-h-screen">
           {/* Slide 1: Full Stack with DS Tech Stack */}
-          <div className={`slide absolute inset-0 transition-opacity duration-1000 ${currentSlide === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div
+            className={`slide absolute inset-0 transition-opacity duration-1000 ${
+              currentSlide === 0
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }`}
+          >
             <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
               <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
                 {/* Left Content */}
@@ -192,27 +58,51 @@ const HeroSlider = () => {
                   <h1 className="hero-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 xs:mb-6 leading-tight">
                     Full Stack with <br className="hidden xs:block" />
                     <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                       Data Science
+                      Data Science
                     </span>
                   </h1>
                   <p className="hero-description text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 xs:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Master the complete web development stack plus cutting-edge data science technologies. Build intelligent applications with AI/ML integration.
+                    Master the complete web development stack plus cutting-edge
+                    data science technologies. Build intelligent applications
+                    with AI/ML integration.
                   </p>
 
                   {/* Tech Stack Icons */}
                   <div className="tech-stack-container flex flex-wrap justify-center lg:justify-start gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 mb-6 xs:mb-8">
-                    {['JavaScript', 'Python', 'Machine Learning', 'Artificial Intelligence'].map((tech, index) => (
-                      <div key={tech} className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2">
-                        <div className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
-                          index === 0 ? 'bg-orange-500' :
-                          index === 1 ? 'bg-blue-500' :
-                          index === 2 ? 'bg-green-500' : 'bg-purple-500'
-                        }`}>
+                    {[
+                      "JavaScript",
+                      "Python",
+                      "Machine Learning",
+                      "Artificial Intelligence",
+                    ].map((tech, index) => (
+                      <div
+                        key={tech}
+                        className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2"
+                      >
+                        <div
+                          className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
+                            index === 0
+                              ? "bg-orange-500"
+                              : index === 1
+                              ? "bg-blue-500"
+                              : index === 2
+                              ? "bg-green-500"
+                              : "bg-purple-500"
+                          }`}
+                        >
                           <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
-                            {index === 0 ? 'JS' : index === 1 ? 'Py' : index === 2 ? 'ML' : 'AI'}
+                            {index === 0
+                              ? "JS"
+                              : index === 1
+                              ? "Py"
+                              : index === 2
+                              ? "ML"
+                              : "AI"}
                           </span>
                         </div>
-                        <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">{tech}</span>
+                        <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">
+                          {tech}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -232,17 +122,25 @@ const HeroSlider = () => {
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-cyan-400 to-purple-600 bg-opacity-5 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
-                      <TechCard 
-                        icon={<path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />}
+                      <TechCard
+                        icon={
+                          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                        }
                         title="Full Stack + Data Science"
                         items={[
-                          'Frontend Development',
-                          'Backend Development',
-                          'Data Analysis',
-                          'Machine Learning',
-                          'AI Integration'
+                          "Frontend Development",
+                          "Backend Development",
+                          "Data Analysis",
+                          "Machine Learning",
+                          "AI Integration",
                         ]}
-                        colors={['bg-cyan-400', 'bg-blue-400', 'bg-purple-400', 'bg-pink-400', 'bg-green-400']}
+                        colors={[
+                          "bg-cyan-400",
+                          "bg-blue-400",
+                          "bg-purple-400",
+                          "bg-pink-400",
+                          "bg-green-400",
+                        ]}
                       />
                     </div>
                   </div>
@@ -252,7 +150,13 @@ const HeroSlider = () => {
           </div>
 
           {/* Slide 2: Full Stack Tech Stack */}
-          <div className={`slide absolute inset-0 transition-opacity duration-1000 ${currentSlide === 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div
+            className={`slide absolute inset-0 transition-opacity duration-1000 ${
+              currentSlide === 1
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }`}
+          >
             <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
               <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
                 {/* Left Content */}
@@ -269,25 +173,46 @@ const HeroSlider = () => {
                     </span>
                   </h1>
                   <p className="hero-description text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 xs:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Become a complete web developer with expertise in both frontend and backend technologies. Build modern, scalable web applications.
+                    Become a complete web developer with expertise in both
+                    frontend and backend technologies. Build modern, scalable
+                    web applications.
                   </p>
 
                   {/* Tech Stack Icons */}
                   <div className="tech-stack-container flex flex-wrap justify-center lg:justify-start gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 mb-6 xs:mb-8">
-                    {['React', 'Node.js', 'MongoDB', 'HTML/CSS'].map((tech, index) => (
-                      <div key={tech} className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2">
-                        <div className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
-                          index === 0 ? 'bg-blue-600' :
-                          index === 1 ? 'bg-green-600' :
-                          index === 2 ? 'bg-green-500' : 'bg-orange-500'
-                        }`}>
-                          <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
-                            {index === 0 ? 'R' : index === 1 ? 'N' : index === 2 ? 'M' : 'H'}
+                    {["React", "Node.js", "MongoDB", "HTML/CSS"].map(
+                      (tech, index) => (
+                        <div
+                          key={tech}
+                          className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2"
+                        >
+                          <div
+                            className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
+                              index === 0
+                                ? "bg-blue-600"
+                                : index === 1
+                                ? "bg-green-600"
+                                : index === 2
+                                ? "bg-green-500"
+                                : "bg-orange-500"
+                            }`}
+                          >
+                            <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
+                              {index === 0
+                                ? "R"
+                                : index === 1
+                                ? "N"
+                                : index === 2
+                                ? "M"
+                                : "H"}
+                            </span>
+                          </div>
+                          <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">
+                            {tech}
                           </span>
                         </div>
-                        <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">{tech}</span>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
 
                   <div className="cta-buttons flex flex-col xs:flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -305,17 +230,29 @@ const HeroSlider = () => {
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-green-400 to-blue-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-green-400 to-blue-600 bg-opacity-10 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
-                      <TechCard 
-                        icon={<path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />}
+                      <TechCard
+                        icon={
+                          <path
+                            fillRule="evenodd"
+                            d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                            clipRule="evenodd"
+                          />
+                        }
                         title="Full Stack Development"
                         items={[
-                          'Frontend Frameworks',
-                          'Backend APIs',
-                          'Database Management',
-                          'Cloud Deployment',
-                          'Version Control'
+                          "Frontend Frameworks",
+                          "Backend APIs",
+                          "Database Management",
+                          "Cloud Deployment",
+                          "Version Control",
                         ]}
-                        colors={['bg-blue-400', 'bg-green-400', 'bg-yellow-400', 'bg-purple-400', 'bg-pink-400']}
+                        colors={[
+                          "bg-blue-400",
+                          "bg-green-400",
+                          "bg-yellow-400",
+                          "bg-purple-400",
+                          "bg-pink-400",
+                        ]}
                       />
                     </div>
                   </div>
@@ -325,7 +262,13 @@ const HeroSlider = () => {
           </div>
 
           {/* Slide 3: Data Science Tech Stack */}
-          <div className={`slide absolute inset-0 transition-opacity duration-1000 ${currentSlide === 2 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div
+            className={`slide absolute inset-0 transition-opacity duration-1000 ${
+              currentSlide === 2
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }`}
+          >
             <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
               <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
                 {/* Left Content */}
@@ -342,25 +285,46 @@ const HeroSlider = () => {
                     </span>
                   </h1>
                   <p className="hero-description text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 xs:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Master the art of data analysis, machine learning, and AI. Transform raw data into actionable insights and build intelligent systems.
+                    Master the art of data analysis, machine learning, and AI.
+                    Transform raw data into actionable insights and build
+                    intelligent systems.
                   </p>
 
                   {/* Tech Stack Icons */}
                   <div className="tech-stack-container flex flex-wrap justify-center lg:justify-start gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 mb-6 xs:mb-8">
-                    {['Python', 'TensorFlow', 'Scikit-learn', 'Pandas'].map((tech, index) => (
-                      <div key={tech} className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2">
-                        <div className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
-                          index === 0 ? 'bg-blue-500' :
-                          index === 1 ? 'bg-orange-500' :
-                          index === 2 ? 'bg-red-500' : 'bg-yellow-500'
-                        }`}>
-                          <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
-                            {index === 0 ? 'Py' : index === 1 ? 'TF' : index === 2 ? 'SK' : 'PD'}
+                    {["Python", "TensorFlow", "Scikit-learn", "Pandas"].map(
+                      (tech, index) => (
+                        <div
+                          key={tech}
+                          className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2"
+                        >
+                          <div
+                            className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
+                              index === 0
+                                ? "bg-blue-500"
+                                : index === 1
+                                ? "bg-orange-500"
+                                : index === 2
+                                ? "bg-red-500"
+                                : "bg-yellow-500"
+                            }`}
+                          >
+                            <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
+                              {index === 0
+                                ? "Py"
+                                : index === 1
+                                ? "TF"
+                                : index === 2
+                                ? "SK"
+                                : "PD"}
+                            </span>
+                          </div>
+                          <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">
+                            {tech}
                           </span>
                         </div>
-                        <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">{tech}</span>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
 
                   <div className="cta-buttons flex flex-col xs:flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -378,17 +342,25 @@ const HeroSlider = () => {
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-purple-400 to-pink-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-purple-400 to-pink-600 bg-opacity-10 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
-                      <TechCard 
-                        icon={<path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />}
+                      <TechCard
+                        icon={
+                          <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                        }
                         title="Data Science"
                         items={[
-                          'Data Analysis',
-                          'Machine Learning',
-                          'Deep Learning',
-                          'Data Visualization',
-                          'Statistical Analysis'
+                          "Data Analysis",
+                          "Machine Learning",
+                          "Deep Learning",
+                          "Data Visualization",
+                          "Statistical Analysis",
                         ]}
-                        colors={['bg-purple-400', 'bg-pink-400', 'bg-blue-400', 'bg-green-400', 'bg-yellow-400']}
+                        colors={[
+                          "bg-purple-400",
+                          "bg-pink-400",
+                          "bg-blue-400",
+                          "bg-green-400",
+                          "bg-yellow-400",
+                        ]}
                       />
                     </div>
                   </div>
@@ -398,7 +370,13 @@ const HeroSlider = () => {
           </div>
 
           {/* Slide 4: Graphics and Animation */}
-          <div className={`slide absolute inset-0 transition-opacity duration-1000 ${currentSlide === 3 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div
+            className={`slide absolute inset-0 transition-opacity duration-1000 ${
+              currentSlide === 3
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }`}
+          >
             <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
               <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
                 {/* Left Content */}
@@ -415,25 +393,46 @@ const HeroSlider = () => {
                     </span>
                   </h1>
                   <p className="hero-description text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 xs:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Create stunning visual experiences with cutting-edge design tools. Master 3D modeling, animation, and digital art for games, films, and web.
+                    Create stunning visual experiences with cutting-edge design
+                    tools. Master 3D modeling, animation, and digital art for
+                    games, films, and web.
                   </p>
 
                   {/* Tech Stack Icons */}
                   <div className="tech-stack-container flex flex-wrap justify-center lg:justify-start gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 mb-6 xs:mb-8">
-                    {['Blender', 'Photoshop', 'After Effects', 'Unity'].map((tech, index) => (
-                      <div key={tech} className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2">
-                        <div className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
-                          index === 0 ? 'bg-orange-600' :
-                          index === 1 ? 'bg-blue-600' :
-                          index === 2 ? 'bg-purple-600' : 'bg-green-600'
-                        }`}>
-                          <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
-                            {index === 0 ? 'Bl' : index === 1 ? 'Ps' : index === 2 ? 'Ae' : 'Un'}
+                    {["Blender", "Photoshop", "After Effects", "Unity"].map(
+                      (tech, index) => (
+                        <div
+                          key={tech}
+                          className="tech-icon bg-opacity-20 backdrop-blur-sm rounded-lg p-1 xs:p-1.5 sm:p-2 md:p-3 flex items-center space-x-1 xs:space-x-2"
+                        >
+                          <div
+                            className={`w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded flex items-center justify-center ${
+                              index === 0
+                                ? "bg-orange-600"
+                                : index === 1
+                                ? "bg-blue-600"
+                                : index === 2
+                                ? "bg-purple-600"
+                                : "bg-green-600"
+                            }`}
+                          >
+                            <span className="text-xs xs:text-xs md:text-sm font-bold text-white">
+                              {index === 0
+                                ? "Bl"
+                                : index === 1
+                                ? "Ps"
+                                : index === 2
+                                ? "Ae"
+                                : "Un"}
+                            </span>
+                          </div>
+                          <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">
+                            {tech}
                           </span>
                         </div>
-                        <span className="text-xs xs:text-xs sm:text-sm font-medium text-white hidden xs:block">{tech}</span>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
 
                   <div className="cta-buttons flex flex-col xs:flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -451,17 +450,29 @@ const HeroSlider = () => {
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-orange-400 to-red-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-orange-400 to-red-600 bg-opacity-10 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
-                      <TechCard 
-                        icon={<path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />}
+                      <TechCard
+                        icon={
+                          <path
+                            fillRule="evenodd"
+                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                            clipRule="evenodd"
+                          />
+                        }
                         title="Graphics & Animation"
                         items={[
-                          '3D Modeling',
-                          'Motion Graphics',
-                          'Digital Art',
-                          'Game Design',
-                          'Visual Effects'
+                          "3D Modeling",
+                          "Motion Graphics",
+                          "Digital Art",
+                          "Game Design",
+                          "Visual Effects",
                         ]}
-                        colors={['bg-orange-400', 'bg-red-400', 'bg-yellow-400', 'bg-purple-400', 'bg-pink-400']}
+                        colors={[
+                          "bg-orange-400",
+                          "bg-red-400",
+                          "bg-yellow-400",
+                          "bg-purple-400",
+                          "bg-pink-400",
+                        ]}
                       />
                     </div>
                   </div>
@@ -478,9 +489,9 @@ const HeroSlider = () => {
               <button
                 key={index}
                 className={`slide-dot w-2 h-2 xs:w-3 xs:h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index 
-                    ? 'bg-white w-4 xs:w-6' 
-                    : 'bg-white bg-opacity-50 hover:bg-opacity-100'
+                  currentSlide === index
+                    ? "bg-white w-4 xs:w-6"
+                    : "bg-white bg-opacity-50 hover:bg-opacity-100"
                 }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
@@ -490,19 +501,19 @@ const HeroSlider = () => {
         </div>
 
         {/* Navigation Arrows */}
-        <button 
+        <button
           className="nav-arrow absolute left-2 xs:left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-40 backdrop-blur-sm rounded-full p-2 xs:p-2 sm:p-3 transition-all duration-300"
           onClick={prevSlide}
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-4 h-4 xs:w-5 xs:h-5 text-white" />
+          <ChevronLeft className="w-4 h-4 xs:w-5 xs:h-5 text-black" />
         </button>
-        <button 
-          className="nav-arrow absolute right-2 xs:right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-40 backdrop-blur-sm rounded-full p-2 xs:p-2 sm:p-3 transition-all duration-300"
+        <button
+          className="nav-arrow absolute right-2 xs:right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-80 hover:bg-opacity-40 backdrop-blur-sm rounded-full p-2 xs:p-2 sm:p-3 transition-all duration-300"
           onClick={nextSlide}
           aria-label="Next slide"
         >
-          <ChevronRight className="w-4 h-4 xs:w-5 xs:h-5 text-white" />
+          <ChevronRight className="w-4 h-4 xs:w-5 xs:h-5 text-black" />
         </button>
       </section>
     </>
@@ -513,15 +524,23 @@ const HeroSlider = () => {
 const TechCard = ({ icon, title, items, colors }) => (
   <div className="text-center text-white h-full flex flex-col justify-center">
     <div className="mb-2 xs:mb-3 md:mb-4 lg:mb-6">
-      <svg className="w-8 h-8 xs:w-12 xs:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mx-auto mb-2 xs:mb-4" fill="currentColor" viewBox="0 0 20 20">
+      <svg
+        className="w-8 h-8 xs:w-12 xs:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mx-auto mb-2 xs:mb-4"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
         {icon}
       </svg>
     </div>
-    <h3 className="text-sm xs:text-lg sm:text-xl md:text-2xl font-bold mb-2 xs:mb-4">{title}</h3>
+    <h3 className="text-sm xs:text-lg sm:text-xl md:text-2xl font-bold mb-2 xs:mb-4">
+      {title}
+    </h3>
     <div className="space-y-1 xs:space-y-1.5 md:space-y-2 lg:space-y-3 text-left text-xs xs:text-sm">
       {items.map((item, index) => (
         <div key={item} className="flex items-center">
-          <div className={`w-1.5 h-1.5 xs:w-2 xs:h-2 ${colors[index]} rounded-full mr-2 xs:mr-3 flex-shrink-0`}></div>
+          <div
+            className={`w-1.5 h-1.5 xs:w-2 xs:h-2 ${colors[index]} rounded-full mr-2 xs:mr-3 flex-shrink-0`}
+          ></div>
           <span className="leading-tight">{item}</span>
         </div>
       ))}

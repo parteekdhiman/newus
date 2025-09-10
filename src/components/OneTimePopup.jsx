@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import logo from "../assets/react.svg";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 const OneTimePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Show on initial mount only once per page load
-    // If user has closed it in this session, keep it closed until refresh
     const hasClosedThisLoad = sessionStorage.getItem("oneTimePopupClosed");
     if (!hasClosedThisLoad) {
       setIsOpen(true);
@@ -33,11 +31,11 @@ const OneTimePopup = () => {
         <div className="flex items-center gap-3 mb-3">
           <h3 className="text-xl font-semibold text-gray-900">Welcome to Newus!</h3>
         </div>
-        <img
+        <LazyLoadImage
           src="https://newus.in/static/media/popup.bc06f1a66f059a86c0be.png"
           alt="Newus banner"
           className="w-full h-full object-contain mb-4"
-          loading="lazy"
+          effect="blur"
         />
         <div className="flex gap-3">
           <a

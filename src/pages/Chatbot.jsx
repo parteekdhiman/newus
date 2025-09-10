@@ -128,7 +128,8 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       type: "bot",
-      text: "Hi! I'm your course assistant. Ask me about our programs - Full Stack Development, Data Science, Digital Marketing, Banking & Finance, and AI courses!",
+      text:
+        "Hi! I'm your course assistant. Ask me about our programs - Full Stack Development, Data Science, Digital Marketing, Banking & Finance, and AI courses!",
     },
   ]);
   const [userInput, setUserInput] = useState("");
@@ -355,17 +356,20 @@ const Chatbot = () => {
     sendMessage();
   };
 
-  const handleClickOutside = useCallback((event) => {
-    if (
-      isOpen &&
-      chatbotPopupRef.current &&
-      !chatbotPopupRef.current.contains(event.target) &&
-      chatbotIconRef.current &&
-      !chatbotIconRef.current.contains(event.target)
-    ) {
-      setIsOpen(false);
-    }
-  }, [isOpen]);
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (
+        isOpen &&
+        chatbotPopupRef.current &&
+        !chatbotPopupRef.current.contains(event.target) &&
+        chatbotIconRef.current &&
+        !chatbotIconRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    },
+    [isOpen]
+  );
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);

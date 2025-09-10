@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { coursesList } from "../data/courseslist";
+import { CoursesList } from "../data/courseslist";
 import { slugify } from "../utils/slugify";
 import { api } from "../utils/api.js";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 function CoursesContent() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,7 +18,7 @@ function CoursesContent() {
   });
   const [formErrors, setFormErrors] = useState({});
   const { id } = useParams();
-  const course = coursesList.find((one) => slugify(one.name) === id);
+  const course = CoursesList.find((one) => slugify(one.name) === id);
 
   const validateForm = () => {
     const errors = {};
@@ -106,7 +107,8 @@ function CoursesContent() {
       <div className="relative overflow-hidden rounded-3xl mb-10">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 opacity-90"></div>
         {course.image && (
-          <img
+          <LazyLoadImage
+          effect="blur"
             src={course.image}
             alt={course.name}
             className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-70"
@@ -118,7 +120,8 @@ function CoursesContent() {
             {course.image && (
               <div className="w-full sm:w-72 lg:w-64 shrink-0">
                 <div className="bg-white/10 backdrop-blur rounded-2xl p-2 ring-1 ring-white/20">
-                  <img
+                  <LazyLoadImage
+                  effect="blur"
                     src={course.image}
                     alt={course.name}
                     className="w-full h-40 object-cover rounded-xl"
@@ -403,6 +406,30 @@ function CoursesContent() {
               )}
             </div>
           </div>
+          {Array.isArray(course.tools) && course.tools.length > 0 && (
+            <div className="bg-white rounded-2xl shadow p-6 border border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                Tool info
+              </h3>
+              <ul className="grid grid-cols-2 gap-4 w-full md:grid-cols-2 lg:grid-cols-3">
+                {Array.isArray(course.tools) &&
+                  course.tools.length > 0 &&
+                  course.tools.map((it, i) => {
+                    return (
+                      <li
+                        key={i}
+                        className="w-full flex flex-col items-center justify-center bg-white md:px-2 md:py-6 rounded-3xl px-1 py-1 "
+                      >
+                        <span> {it.img}</span>
+                        <h4 class="text-black regular text-center">
+                          {it.type}
+                        </h4>
+                      </li>
+                    );
+                  })}
+              </ul>
+            </div>
+          )}
         </aside>
       </div>
 

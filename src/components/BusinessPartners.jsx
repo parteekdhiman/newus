@@ -1,6 +1,9 @@
 import React from "react";
 import partner from "../data/BusinessPartners";
 import {Link} from "react-router-dom"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 const BusinessPartners = () => {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-blue-50">
@@ -22,7 +25,7 @@ const BusinessPartners = () => {
             partner.map((item, i) => {
               return (
                 <div key={i} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 flex items-center justify-center group cursor-pointer">
-                  <Link to={item.link}><img src={item.img} alt={item.name} className="h-16 object-contain"/></Link>
+                  <Link to={item.link}><LazyLoadImage effect="blur" src={item.img} alt={item.name} className="h-16 object-contain"/></Link>
                 </div>
               );
             })}

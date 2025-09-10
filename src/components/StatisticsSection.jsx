@@ -1,7 +1,9 @@
 import React from "react";
-import SliderPartners from "./Sliderparteners";
 
 const StatisticsSection = () => {
+  const startYear = 1998;
+  const currentYear = new Date().getFullYear();
+  const experience = currentYear - startYear;
   return (
     <section className="py-20 gradient-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,8 +44,8 @@ const StatisticsSection = () => {
             >
               ⭐
             </div>
-            <div className="counter text-5xl font-bold text-white mb-2">
-              26+
+            <div className="counter text-5xl font-bold text-white mb-2 ">
+              {experience}+
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">
               Years of Experience
