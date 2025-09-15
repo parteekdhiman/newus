@@ -56,6 +56,37 @@
 .graphic-off {
   color: rgb(0, 47, 255);
 }
+/* Center dots */
+.swiper-pagination {
+  bottom: 0px !important;  /* push dots just below cards */
+  text-align: center !important; /* center them */
+}
+
+/* Bigger pagination dots */
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: #d1d5db; /* gray-300 */
+  opacity: 1;
+  transition: all 0.3s ease;
+  margin: 0 6px !important;
+  border-radius: 50%; /* circle */
+}
+
+/* Active dot */
+.swiper-pagination-bullet-active {
+  width: 28px; /* pill effect */
+  border-radius: 12px;
+  background: linear-gradient(to right, #8b5cf6, #3b82f6); /* purple → blue */
+}
+/* Hide navigation buttons on mobile & tablet */
+@media (max-width: 1023px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
 .dropdown-enter {
   opacity: 0;
   transform: translateY(-10px);

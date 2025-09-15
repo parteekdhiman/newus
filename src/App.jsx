@@ -2,6 +2,7 @@ import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Suspense } from "react";
+import ScrollToTop from "./ScrollToTop";
 const CoursesContent = lazy(() => import("./pages/CoursesContent"));
 const Navbar = lazy(() => import("./components/Navbar"));
 const Home = lazy(() => import("./pages/Home"));
@@ -22,6 +23,7 @@ function App() {
         Pradesh
       </title>
       <Suspense fallback={<Preloader />}>
+      <ScrollToTop/>
         <Navbar />
         <OneTimePopup />
         <Routes>

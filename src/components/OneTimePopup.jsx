@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import popup from "../assets/popup.jpg"
 const OneTimePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,7 +33,7 @@ const OneTimePopup = () => {
           <h3 className="text-xl font-semibold text-gray-900">Welcome to Newus!</h3>
         </div>
         <LazyLoadImage
-          src="https://newus.in/static/media/popup.bc06f1a66f059a86c0be.png"
+          src={popup}
           alt="Newus banner"
           className="w-full h-full object-contain mb-4"
           effect="blur"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 4; // Number of slides
@@ -46,8 +46,8 @@ const HeroSlider = () => {
                 : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
-              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
+            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-12 sm:py-20 h-full flex items-center">
+              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-10 xl:gap-16 w-full items-center">
                 {/* Left Content */}
                 <div className="text-center lg:text-left order-2 lg:order-1">
                   <div className="mb-4 xs:mb-6">
@@ -108,9 +108,9 @@ const HeroSlider = () => {
                   </div>
 
                   <div className="cta-buttons flex flex-col xs:flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center lg:justify-start">
-                    <button className="cta-button bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 xs:px-5 xs:py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm xs:text-base">
+                    <Link  className="cta-button bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 xs:px-5 xs:py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm xs:text-base">
                       Start Learning
-                    </button>
+                    </Link>
                     <button className="cta-button border-2 border-white text-white px-4 py-2 xs:px-5 xs:py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105 text-sm xs:text-base">
                       View Curriculum
                     </button>
@@ -118,7 +118,7 @@ const HeroSlider = () => {
                 </div>
 
                 {/* Right Visual */}
-                <div className="hidden sm:flex justify-center lg:justify-end order-1 lg:order-2">
+                <div className="hidden sm:flex justify-center lg:justify-center order-1 lg:order-2">
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-cyan-400 to-purple-600 bg-opacity-5 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
@@ -157,8 +157,8 @@ const HeroSlider = () => {
                 : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
-              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
+            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-12 sm:py-20 h-full flex items-center">
+              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-10 xl:gap-16 w-full items-center">
                 {/* Left Content */}
                 <div className="text-center lg:text-left order-2 lg:order-1">
                   <div className="mb-4 xs:mb-6">
@@ -226,7 +226,7 @@ const HeroSlider = () => {
                 </div>
 
                 {/* Right Visual */}
-                <div className="hidden sm:flex justify-center lg:justify-end order-1 lg:order-2">
+                <div className="hidden sm:flex justify-center lg:justify-center order-1 lg:order-2">
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-green-400 to-blue-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-green-400 to-blue-600 bg-opacity-10 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
@@ -269,8 +269,8 @@ const HeroSlider = () => {
                 : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
-              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
+            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-12 sm:py-20 h-full flex items-center">
+              <div className="grid lg:grid-cols-2 w-full items-center">
                 {/* Left Content */}
                 <div className="text-center lg:text-left order-2 lg:order-1">
                   <div className="mb-4 xs:mb-6">
@@ -338,7 +338,7 @@ const HeroSlider = () => {
                 </div>
 
                 {/* Right Visual */}
-                <div className="hidden sm:flex justify-center lg:justify-end order-1 lg:order-2">
+                <div className="hidden sm:flex justify-center lg:justify-center order-1 lg:order-2">
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-purple-400 to-pink-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-purple-400 to-pink-600 bg-opacity-10 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">
@@ -377,8 +377,8 @@ const HeroSlider = () => {
                 : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-16 sm:py-20 h-full flex items-center">
-              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-full items-center">
+            <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12 container-padding py-8 xs:py-12 sm:py-20 h-full flex items-center">
+              <div className="grid lg:grid-cols-2 gap-4 xs:gap-6 md:gap-8 lg:gap-10 xl:gap-16 w-full items-center">
                 {/* Left Content */}
                 <div className="text-center lg:text-left order-2 lg:order-1">
                   <div className="mb-4 xs:mb-6">
@@ -446,7 +446,7 @@ const HeroSlider = () => {
                 </div>
 
                 {/* Right Visual */}
-                <div className="hidden sm:flex justify-center lg:justify-end order-1 lg:order-2">
+                <div className="hidden sm:flex justify-center lg:justify-center order-1 lg:order-2">
                   <div className="relative">
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-orange-400 to-red-600 rounded-3xl opacity-20 absolute -top-2 xs:-top-4 -left-2 xs:-left-4"></div>
                     <div className="visual-card w-48 h-48 xs:w-64 xs:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gradient-to-r from-orange-400 to-red-600 bg-opacity-10 backdrop-blur-sm rounded-3xl p-3 xs:p-4 md:p-6 lg:p-8 relative">

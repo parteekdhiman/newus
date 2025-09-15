@@ -112,9 +112,9 @@ export default function ModernNavbar() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <div className="text-2xl font-bold text-indigo-600">
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <Link to="/" className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   newus
-                </span>
+                </Link>
               </div>
             </div>
 

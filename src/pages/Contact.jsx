@@ -378,7 +378,7 @@ const Contact = () => {
                         onFocus={handleInputFocus}
                         onBlur={handleInputBlur}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:ring-0 transition-all duration-300 text-gray-800 placeholder-gray-400 bg-gray-50 focus:bg-white"
-                        placeholder="John"
+                        placeholder="newus"
                       />
                     </div>
                     <div>
@@ -398,7 +398,7 @@ const Contact = () => {
                         onFocus={handleInputFocus}
                         onBlur={handleInputBlur}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:ring-0 transition-all duration-300 text-gray-800 placeholder-gray-400 bg-gray-50 focus:bg-white"
-                        placeholder="Doe"
+                        placeholder="Dharamshala"
                       />
                     </div>
                   </div>
@@ -421,7 +421,7 @@ const Contact = () => {
                       onFocus={handleInputFocus}
                       onBlur={handleInputBlur}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:ring-0 transition-all duration-300 text-gray-800 placeholder-gray-400 bg-gray-50 focus:bg-white"
-                      placeholder="john.doe@example.com"
+                      placeholder="newusdharamshala@example.com"
                     />
                   </div>
 
@@ -443,7 +443,7 @@ const Contact = () => {
                       onFocus={handleInputFocus}
                       onBlur={handleInputBlur}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:ring-0 transition-all duration-300 text-gray-800 placeholder-gray-400 bg-gray-50 focus:bg-white"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="86796-86796"
                     />
                   </div>
 
